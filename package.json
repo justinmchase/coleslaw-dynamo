@@ -1,0 +1,19 @@
+{
+  "name": "coleslaw-dynamo",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinmchase/coleslaw-dynamo.git"
+  },
+  "author": "Justin Chase <justin.m.chase@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinmchase/coleslaw-dynamo/issues"
+  },
+  "homepage": "https://github.com/justinmchase/coleslaw-dynamo#readme"
+}

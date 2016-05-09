@@ -1,0 +1,34 @@
+{
+  "name": "coleslaw-dynamo",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinmchase/coleslaw-dynamo.git"
+  },
+  "author": "Justin Chase <justin.m.chase@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinmchase/coleslaw-dynamo/issues"
+  },
+  "homepage": "https://github.com/justinmchase/coleslaw-dynamo#readme",
+  "peerDependencies": {
+    "coleslaw": "^0.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.4"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "aws-sdk": "^2.3.9",
+    "joi": "^8.0.5",
+    "node-uuid": "^1.4.7",
+    "vogels": "^2.2.0"
+  }
+}

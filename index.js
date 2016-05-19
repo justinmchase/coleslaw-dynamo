@@ -2,14 +2,15 @@ var assert = require('assert')
 var vogels = require('vogels')
 var Joi = require('joi')
 
-function create(options, models) {
-    assert(options)
-    assert(models)
+function build(context, callback) {
+    assert(context)
+    assert(callback)
+    assert(!context.dataAccess)
     
-    if (!models.length) models = [models]
+    context.dataAccess = {}
     
-    var dataAccess = {}
-    models.forEach(model => {
+    var definitions = context.definitions || []
+    definitions.forEach(model => {
         var indexFields = model.fields.filter(f => f.index)
         if (!indexFields.length) throw new TypeError(`Model '${model.name}' must have at least one id field`)
         
@@ -36,17 +37,23 @@ function create(options, models) {
             })
         })
         
-        dataAccess[model.name] = vogels.define(model.name, {
+        var table = vogels.define(model.name, {
             hashKey: indexFields[0].name,
             timestamps: true,
             schema: schema,
             indexes: indexes
         })
+        
+        context.dataAccess[model.name] = {
+            table: table,
+            create: null,
+            retrieve: null,
+            update: null,
+            delete: null
+        }
     })
     
-    return dataAccess
+    callback(null)
 }
 
-module.exports = {
-    create: create
-}
+module.exports = build
